@@ -1,0 +1,24 @@
+<% if @urls.empty? %>
+  <div class="no-urls-found">
+    We didn't find any sites for that color! Check back, we'll keep looking!
+  </div>
+<% else %>
+  <table class="urls">
+    <thead>
+      <th>Color</th>
+      <th>Title</th>
+      <th>Url</th>
+      <th>Screencap</th>
+    </thead>
+    <% @urls.each do |url| %>
+      <tr>
+        <td><span style="display: block; width: 10px; height: 10px; border: 1px solid black; background: <%= @color %>;"></span></td>
+        <td><a href="<%= url.url %>"><%= url.title[0..20] %></a></td>
+        <td><a href="<%= url.url %>"><%= url.url %></a></td>
+        <% if url.screencap %>
+          <td><img src="<%= url.screencap %>" /></td></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </div>
+<% end %>

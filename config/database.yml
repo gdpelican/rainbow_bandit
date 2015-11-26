@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: rainbow_bandit
+  encoding: utf8
+  pool: 1000
+  timeout: 5000
